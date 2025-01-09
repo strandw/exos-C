@@ -42,3 +42,49 @@ int tab1[5] = {1,2,3,4,5};
     for (int i = 0; i < 5; i++) printf("%d ", res[i]);
     printf("\n");
     return 0;
+    
+    // Exercise 2.4
+    int main() {
+    int tab[10] = {1,2,3,4,5,6,7,8,9,10};
+    int *point = tab; // pointeur sur le tableau
+    int nbr = 0; // nombre à chercher
+    int find = 0; // nbr et find doivent etre indentique    
+
+    printf("Entrez un nombre à chercher: ");
+    scanf("%d", &nbr);
+
+    for (int i = 0; i < 10; i++) {
+        if (*(point + i) == nbr) { // on compare la valeur pointée par point + i avec nbr
+            find = 1; 
+            break; // on sort de la boucle
+        }
+    }
+
+    if (find) {
+        printf("Le nombre %d est présent.\n", nbr);
+    } else {
+        printf("Le nombre %d n'est pas présent.\n", nbr);
+    }
+    return 0;
+}
+
+// Exercise 2.5
+int main () {
+    int tab[6] = {3, 1, 4, 1, 5, 9};
+    int *point = tab;
+
+    for (int i = 0; i < 6; i++) { // on trie le tableau
+        for (int j = i + 1; j < 6; j++) { // on compare les valeurs
+            if (*(point + i) > *(point + j)) { // si la valeur pointée par le pointeur + i est supérieure à celle pointée par le pointeur + j
+                int temp = *(point + i); //  on échange les valeurs
+                *(point + i) = *(point + j); // on continue le processus d'échange les valeurs
+                *(point + j) = temp; // on continue le processus d'échange les valeurs
+            }
+        }
+    }
+
+    printf("resultat du tableau trié: ");
+    for (int i = 0; i < 6; i++) printf("%d ", tab[i]); // on affiche le tableau trié
+    printf("\n");
+    return 0;
+} // j'ai eu plus de mal pour cette exercice la 
