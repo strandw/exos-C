@@ -88,3 +88,34 @@ int main () {
     printf("\n");
     return 0;
 } // j'ai eu plus de mal pour cette exercice la 
+
+// Exercise 2.6 
+
+  int main() {
+    int tab1[5] = {1,2,3,4,5};
+    int tab2[5];
+    int *p1 = tab1, *p2 = tab2;
+
+    for (int i = 0; i < 5; i++) {
+        *(p2 + i) = *(p1 + i); // nous permet de copier les valeurs du tableau 1 dans le tableau 2
+    }
+
+    printf("Tableau 1: ");
+    for (int i = 0; i < 5; i++) printf("%d ", tab1[i]);
+    printf("\nTableau 2: ");
+    for (int i = 0; i < 5; i++) printf("%d ", tab2[i]);
+    printf("\n");
+    return 0;
+}
+
+// Exercise 2.7
+ int tab[7] = {1,2,3,4,5,6,7};
+    int *point = tab;
+    int somme = 0;
+
+    for (int i = 0; i < 7; i++) {
+        somme += *(point + i);
+    }
+
+    printf("Somme des éléments: %d\n", somme);
+}
